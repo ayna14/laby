@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+    <title>Notepads</title>
+    <meta charset="utf-8">
+    <script src="//code.jquery.com/jquery-2.2.2.min.js"></script>
+    <script src="~/Scripts/knockout-3.4.0.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/MyScript.js"></script>
+    <link href="~/Content/Style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="jumbotron" style="background-color:moccasin">
+        <div class="lead">
+            <input type="text" data-bind="value: notepadName" />
+            <button data-bind="click: createNotepad">Создать</button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+              <div ><ul class="item" id="notepadList" data-bind="click: select"></ul></div>
+            </div>
+            <div class="col-md-4">
+                <textarea width="200" height="200" id ="notepadContent"></textarea>
+                <button data-bind="click: saveContent" >Сохранить</button>
+            </div>
+            <div class="col-md-4">
+                <img src="" />
+            </div>
+         </div>
+    </div>
+    <script>
+        var name = '@ViewBag.Name';
+        GetNotepad(name);
+    </script>
+</body>
+</html>
